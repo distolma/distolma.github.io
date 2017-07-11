@@ -1,0 +1,10 @@
+{
+  "extends": "google",
+  "rules": {
+    "object-curly-spacing": ["error", "always"]
+  },
+  "env": { 
+    "browser": true,
+    "es6": true
+  }
+}
