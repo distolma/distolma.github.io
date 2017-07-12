@@ -11,8 +11,18 @@
 	<meta name="msapplication-navbutton-color" theme />
 	<meta name="apple-mobile-web-app-status-bar-style" theme />
 
+  <script src="https://ft-polyfill-service.herokuapp.com/v2/polyfill.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
   <script>WebFont.load({ google: { families: ['Jaldi'] } });</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-78571646-2', 'auto');
+    ga('send', 'pageview');
+  </script>
 </head>
 <body class="loading">
   <div id="preloader">
@@ -28,36 +38,27 @@
         <h3>JavaScript Developer</h3>
         <ul class="social">
           <li>
-            <a target="_blank" href="mailto:djmakaron2009@gmail.com">
+            <a target="_blank" rel="nofollow" href="mailto:djmakaron2009@gmail.com">
                 <i class="icon-mail" aria-hidden="true"></i>
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://github.com/distolma">
+            <a target="_blank" rel="nofollow" href="https://github.com/distolma">
                 <i class="icon-github-circled" aria-hidden="true"></i>
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.linkedin.com/in/dmytromostovyi/">
+            <a target="_blank" rel="nofollow" href="https://www.linkedin.com/in/dmytromostovyi/">
                 <i class="icon-linkedin-squared" aria-hidden="true"></i>
             </a>
           </li>
         </ul>
       </div>
     </div>
+    <div id="userInfo"></div>
   </div>
 
   <link rel="stylesheet" href="/dist/css/style.css">
-  <script src="/dist/js/main.js"></script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-78571646-2', 'auto');
-    ga('send', 'pageview');
-
-  </script>
+  <script async src="/dist/js/main.js"></script>
 </body>
 </html>

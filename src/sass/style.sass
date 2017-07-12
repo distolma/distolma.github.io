@@ -21,14 +21,18 @@
   max-width: 1200px
   margin: 0 auto
   padding: 0 15px
-  min-height: 100vh
   display: flex
   justify-content: center
   align-items: center
+  height: 100%
 
 .stripped
   background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.4), rgba(0,0,0,.4) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.4) 3px)
   background-size: 4px 4px
+  height: 100%
+
+body, html
+  height: 100%
 
 body
   background-repeat: no-repeat
@@ -63,10 +67,52 @@ h1, h2, h3, h4, h5, h6
   list-style-type: none
   padding: 0
   display: flex
+  a
+    text-decoration: none
   i
+    outline: none
     margin: 0 1em
     font-size: 25px
     color: #fff
-    transition: opacity .1s ease
+    transition: color .1s ease
+    cursor: pointer
+
+#userInfo
+  position: absolute
+  right: 3em
+  bottom: 1em
+  color: #fff
+  opacity: 0.2
+  transition: opacity .2s ease
+  &:hover
+    opacity: 0.7
+  a
+    color: inherit
     &:hover
-      opacity: 0.8
+      text-decoration: none
+  .breckets
+    position: relative
+    &:before
+      content: '<'
+      left: -22px
+      top: -3px
+    &:after
+      content: '>'
+      right: -22px
+      top: -3px
+    &:before,
+    &:after
+      font-size: 40px
+      line-height: 27px
+      position: absolute
+    span
+      &:first-child
+        &:after
+          content: '/'
+          margin-left: 3px
+
+@media (max-width: 768px)
+  #userInfo
+    width: 100%
+    left: 0
+    text-align: center

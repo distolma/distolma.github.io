@@ -1,33 +1,99 @@
-const getMainColor = (image) => {
-  const vibrant = new Vibrant(image).swatches();
+const KEY = 'cf2490a94f8eee61bc9fdce89fe09521a0ec14ef593924d780c3c77b79af08df';
+
+const getColors = (image) => new Vibrant(image).swatches();
+
+const getVibrantColor = (colors) => {
+  if (colors.Vibrant) return colors.Vibrant.getHex();
+  else if (colors.LightVibrant) return colors.LightVibrant.getHex();
+  else return 'rgba(256, 256, 256, 0.7)';
+};
+
+const isLandscape = window.innerHeight < window.innerWidth;
+
+const getMainColor = (colors) => {
   const maxPopulationColor = Object
-    .keys(vibrant)
-    .map((key) => vibrant[key])
+    .keys(colors)
+    .map((key) => colors[key])
     .sort((a, b) => b.population - a.population)[0].getHex();
   return maxPopulationColor;
 };
 
+const setBackground = (color, url) => {
+  const style = document.body.style;
+  style.backgroundColor = color;
+  style.backgroundImage = `url(${url})`;
+};
+
 const setThemeColor = (color) => {
   const metas = document.head.querySelectorAll('meta[theme]');
-  metas.forEach((meta) => meta.setAttribute('content', color));
+  Array.prototype.forEach.call(metas, (meta) => {
+    meta.setAttribute('content', color);
+  });
+};
+
+const getUserInfo = (data) => {
+  if (data) {
+    const { name, links } = data.user;
+    const link = [
+      links.html,
+      '?utm_source=distolma',
+      '&utm_medium=referral',
+      '&utm_campaign=api-credit',
+    ].join('');
+    return { name, link };
+  }
+};
+
+const usetInfoTemplate = (user) => `
+  <p class="user-info">
+    <span class="breckets">
+      <span><a target="_blank" rel="nofollow" href="${user.link}">${user.name}</a></span>
+      <span><a target="_blank" rel="nofollow" href="https://unsplash.com/">Unsplash</a></span>
+    </span>
+  </p>
+`;
+
+const displayUserInfo = (data) => {
+  const user = getUserInfo(data);
+  document.querySelector('#userInfo').innerHTML = usetInfoTemplate(user);
+  return data;
+};
+
+const setAccentColor = (color) => {
+  const css = `
+  a:hover i{color:${color}};
+  a:focus i{color:${color}};
+  `;
+  const style = document.createElement('style');
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+  document.getElementsByTagName('head')[0].appendChild(style);
 };
 
 const parseJSON = (response) => {
   return response.json();
 };
 
-const mapToUrl = (body) => body.urls.regular;
+const mapResponseToUrl = (body) => body.urls.regular;
 
-const setBackground = (imageUrl) => {
+const onLoadHandler = (img, url) => {
+  const colors = getColors(img);
+  const mainColor = getMainColor(colors);
+  const vibrantColor = getVibrantColor(colors);
+  setBackground(mainColor, url);
+  setThemeColor(mainColor);
+  setAccentColor(vibrantColor);
+};
+
+const loadImage = (imageUrl) => {
   const url = imageUrl || '/dist/img/bg.jpeg';
   const img = new Image();
   img.crossOrigin = 'Anonymous';
-  const bodyStyle = document.body.style;
   img.onload = () => {
-    const color = getMainColor(img);
-    bodyStyle.backgroundColor = color;
-    bodyStyle.backgroundImage = `url(${url})`;
-    setThemeColor(color);
+    onLoadHandler(img, url);
     deleteLoader();
   };
   img.src = url;
@@ -43,13 +109,20 @@ const deleteLoader = () => {
   });
 };
 
-fetch(`https://api.unsplash.com/photos/random?w=${window.innerWidth}`, {
+const orientation = isLandscape ? 'landscape' : 'portrait';
+
+fetch([
+  'https://api.unsplash.com/photos/random',
+  `?w=${window.innerWidth}`,
+  `&orientation=${orientation}`,
+].join(''), {
   headers: {
-    Authorization: 'Client-ID cf2490a94f8eee61bc9fdce89fe09521a0ec14ef593924d780c3c77b79af08df',
+    Authorization: `Client-ID ${KEY}`,
   },
 })
   .then(parseJSON)
-  .then(mapToUrl)
-  .then(setBackground)
-  .catch(() => setBackground());
+  .then(displayUserInfo)
+  .then(mapResponseToUrl)
+  .then(loadImage)
+  .catch(() => loadImage());
 

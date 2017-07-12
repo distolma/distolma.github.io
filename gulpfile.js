@@ -29,7 +29,6 @@ gulp.task('sass', () => {
 
 gulp.task('js', () => {
   return gulp.src([
-      './src/js/promise.js',
       './src/js/fetch.js',
       './src/js/vibrant.js',
       './src/js/main.js',
