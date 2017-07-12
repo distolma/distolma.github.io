@@ -18,6 +18,18 @@ const getMainColor = (colors) => {
   return maxPopulationColor;
 };
 
+const setSeletion = (color) => {
+  const cssText = `
+    color: #fff;
+    background-color: ${color};
+  `;
+  const css = `
+    ::-moz-selection {${cssText}}
+    ::selection {${cssText}}
+  `;
+  insertCss(css);
+};
+
 const setBackground = (color, url) => {
   const style = document.body.style;
   style.backgroundColor = color;
@@ -61,9 +73,13 @@ const displayUserInfo = (data) => {
 
 const setAccentColor = (color) => {
   const css = `
-  a:hover i{color:${color}};
-  a:focus i{color:${color}};
+    a:hover i{color:${color}};
+    a:focus i{color:${color}};
   `;
+  insertCss(css);
+};
+
+const insertCss = (css) => {
   const style = document.createElement('style');
   if (style.styleSheet) {
     style.styleSheet.cssText = css;
@@ -85,6 +101,7 @@ const onLoadHandler = (img, url) => {
   const vibrantColor = getVibrantColor(colors);
   setBackground(mainColor, url);
   setThemeColor(mainColor);
+  setSeletion(vibrantColor);
   setAccentColor(vibrantColor);
 };
 
