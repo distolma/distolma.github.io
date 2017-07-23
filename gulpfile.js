@@ -19,7 +19,7 @@ gulp.task('browser', () => {
 });
 
 gulp.task('sass', () => {
-  return gulp.src('./src/sass/**/*.{sass,scss}')
+  return gulp.src('./src/sass/**/*.(sass|scss)')
     .pipe(sass({ outputStyle: 'expand' }).on('error', notify.onError()))
     .pipe(postcss())
     .pipe(cssnano())

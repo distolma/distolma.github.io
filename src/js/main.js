@@ -112,6 +112,7 @@ const loadImage = (imageUrl) => {
   img.onload = () => {
     onLoadHandler(img, url);
     deleteLoader();
+    stopReloadAnim();
   };
   img.src = url;
 };
@@ -119,6 +120,7 @@ const loadImage = (imageUrl) => {
 const deleteLoader = () => {
   const body = document.body;
   const loader = document.getElementById('preloader');
+  if (!loader) return;
   loader.classList.add('end');
   loader.addEventListener('transitionend', () => {
     loader.remove();
@@ -128,18 +130,48 @@ const deleteLoader = () => {
 
 const orientation = isLandscape ? 'landscape' : 'portrait';
 
-fetch([
-  'https://api.unsplash.com/photos/random',
-  `?w=${window.innerWidth}`,
-  `&orientation=${orientation}`,
-].join(''), {
-  headers: {
-    Authorization: `Client-ID ${KEY}`,
-  },
-})
-  .then(parseJSON)
-  .then(displayUserInfo)
-  .then(mapResponseToUrl)
-  .then(loadImage)
-  .catch(() => loadImage());
+const fetchImage = () =>
+  fetch([
+    'https://api.unsplash.com/photos/random',
+    `?w=${window.innerWidth}`,
+    `&orientation=${orientation}`,
+  ].join(''), {
+    headers: {
+      Authorization: `Client-ID ${KEY}`,
+    },
+  })
+    .then(parseJSON)
+    .then(displayUserInfo)
+    .then(mapResponseToUrl)
+    .then(loadImage)
+    .catch(() => loadImage());
 
+const stopReloadAnim = () => {
+  const buttom = document.getElementById('reloadImage');
+  buttom.classList.remove('active');
+};
+
+document.getElementById('reloadImage')
+  .addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.add('active');
+    fetchImage();
+  });
+
+let toggle = false;
+document.getElementById('hideProfile')
+  .addEventListener('click', function(event) {
+    event.preventDefault();
+    document.body.classList.toggle('hide-profile');
+    const icon = this.querySelector('i').classList;
+    toggle = !toggle;
+    if (toggle) {
+      icon.remove('icon-eye-off');
+      icon.add('icon-eye');
+    } else {
+      icon.add('icon-eye-off');
+      icon.remove('icon-eye');
+    }
+  });
+
+window.onload = fetchImage;

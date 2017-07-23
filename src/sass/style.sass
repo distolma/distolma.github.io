@@ -31,6 +31,7 @@
   background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.4), rgba(0,0,0,.4) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.4) 3px)
   background-size: 4px 4px
   min-height: 100vh
+  transition: all 12s ease
 
 body, html
   min-height: 100vh
@@ -43,6 +44,11 @@ body
   color: #fff
   .loading
     overflow: hidden
+  &.hide-profile
+    .profile
+      opacity: 0
+    .stripped
+      background: 0
 
 h1, h2, h3, h4, h5, h6
   font-weight: 300
@@ -50,6 +56,7 @@ h1, h2, h3, h4, h5, h6
 .profile
   padding: 5em  0
   display: flex
+  transition: opacity .2s ease
   align-items: center
   flex-direction: column
 
@@ -79,15 +86,46 @@ h1, h2, h3, h4, h5, h6
     transition: color .1s ease
     cursor: pointer
 
-#userInfo
+.plugin
   position: absolute
   right: 3em
-  bottom: 1em
-  color: #fff
   opacity: 0.2
   transition: opacity .2s ease
+  &.profile-controll
+    right: 2em
+    padding: 1em 0
+    top: 1em
+    a
+      cursor: pointer
+      padding: 0
+      margin: 0
+      outline: none
+      color: #fff
+      text-decoration: none
+      display: inline-block
+      &.active
+        i
+          animation-name: spin
+          animation-iteration-count: infinite
+          animation-duration: 1000ms
+          animation-timing-function: linear
+      i
+        font-size: 20px
+        display: block
+        margin: .2em 0
+        transition: all .1s ease
   &:hover
     opacity: 0.8
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+#userInfo
+  bottom: 1em
+  color: #fff
   a
     color: inherit
     &:hover
