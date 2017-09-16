@@ -1,0 +1,30 @@
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css?family=Jaldi');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #fff;
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+body {
+  font-family: 'Jaldi', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+}
