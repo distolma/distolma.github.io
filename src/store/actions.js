@@ -12,14 +12,6 @@ export const fetchRandomPhoto = async ({ commit }) => {
     commit(types.RECEIVE_RANDOM_PHOTO, { data });
   } catch (error) {
     setMainColor();
-    // commit(types.RECEIVE_RANDOM_PHOTO, {
-    //   data: {
-    //     urls: {
-    //       full: 'https://unsplash.it/200/300',
-    //       thumb: 'https://unsplash.it/200/300',
-    //     },
-    //   },
-    // });
   }
 };
 

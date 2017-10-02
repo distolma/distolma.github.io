@@ -31,9 +31,11 @@ export default {
   }),
   methods: {
     toggleVisible() {
+      this.$ga.event('photo', 'hide profile');
       this.$store.dispatch('toggleProfileVisibility');
     },
     fetchPhoto() {
+      this.$ga.event('photo', 'refresh photo');
       if (!this.isLoading) {
         this.$store.dispatch('fetchRandomPhoto');
       }

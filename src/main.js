@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import Icon from 'vue-awesome/components/Icon';
 import VueProgressiveImage from 'vue-progressive-image';
+import VueAnalytics from 'vue-analytics';
 
 import App from './App';
 
@@ -12,6 +13,10 @@ import './scss/style.scss';
 
 Vue.use(VueProgressiveImage, {
   delay: 0,
+});
+
+Vue.use(VueAnalytics, {
+  id: 'UA-78571646-2',
 });
 
 Vue.component('icon', Icon);

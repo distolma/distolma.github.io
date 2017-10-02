@@ -70,7 +70,7 @@ export default {
   flex-direction: column;
   transition: all .2s ease;
   opacity: 1;
-  visibility: visible;;
+  visibility: visible;
 
   &--hide {
     opacity: 0;
@@ -119,5 +119,11 @@ export default {
   height: 1.3em;
   max-width: 100%;
   max-height: 100%;
+}
+
+@media (max-height: 680px) {
+  .profile {
+    padding: 0;
+  }
 }
 </style>
