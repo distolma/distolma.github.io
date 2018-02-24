@@ -3,7 +3,6 @@
     <progressive-background
       :src="images.custom"
       :placeholder="images.thumb"
-      @onLoad="onLoadImage"
     >
       <div :class="[isStriped ? '' : 'background__striped--hide', 'background__striped']">
         <div class="background__container">
@@ -14,28 +13,19 @@
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex';
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { Getter } from "vuex-class";
 
-export default {
-  name: 'background',
-  props: {
-    isStriped: Boolean,
-  },
-  computed: mapGetters({
-    images: 'imageURLs',
-  }),
-  methods: {
-    onLoadImage() {
-      // console.log('placeholder');
-    },
-  },
-};
+@Component
+export default class Background extends Vue {
+  @Getter("profileVisibility") private isStriped: boolean;
+  @Getter("imageURLs") private images: any;
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
+<style lang="scss">
 .background {
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,15 +43,21 @@ export default {
 
   &__striped {
     height: 100vh;
-    background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) 1px, transparent 2px, transparent 0, rgba(0, 0, 0, .4) 3px);
+    background-repeat: repeat;
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4) 1px,
+      transparent 2px,
+      transparent 0,
+      rgba(0, 0, 0, 0.4) 3px
+    );
     background-size: 4px 4px;
-    transition: background .2s ease;
+    transition: background 0.2s ease;
 
     &--hide {
       background: 0;
     }
   }
 }
-
-
 </style>

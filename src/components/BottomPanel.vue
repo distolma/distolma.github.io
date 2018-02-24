@@ -1,30 +1,29 @@
 <template>
   <div :class="['bottom-panel', author.name ? '' : 'bottom-panel--hide']">
     <div class="bottom-panel__box">
-      <icon name="angle-left" />
-      <a class="bottom-panel__link" href="">
+      <Icon name="angle-left" />
+      <a class="bottom-panel__link" :href="author.links.html + utm" target="_blank">
         {{ author.name }}
       </a>
       &nbsp;/&nbsp;
-      <a class="bottom-panel__link" href="https://unsplash.com/" rel="nofollow" target="_black">
+      <a class="bottom-panel__link" :href="'https://unsplash.com/' + utm" rel="nofollow" target="_blank">
         Unsplash
       </a>
-      <icon name="angle-left" flip="horizontal" />
+      <Icon name="angle-left" flip="horizontal" />
     </div>
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex';
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { Getter } from "vuex-class";
+import "vue-awesome/icons/angle-left";
 
-import 'vue-awesome/icons/angle-left';
-
-export default {
-  name: 'bottom-panel',
-  computed: mapGetters({
-    author: 'imageAuthor',
-  }),
-};
+@Component
+export default class BottomPanel extends Vue {
+  @Getter("imageAuthor") private author: any;
+  private utm = "?utm_source=Unpaper&utm_medium=referral";
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -43,8 +42,8 @@ export default {
     display: flex;
     align-items: center;
     white-space: nowrap;
-    opacity: .3;
-    transition: opacity .2s ease;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
 
     &:hover {
       opacity: 1;
@@ -53,7 +52,6 @@ export default {
 
   &__link {
     color: #fff;
-    text-decoration-skip: ink;
 
     &:hover {
       text-decoration: none;

@@ -2,46 +2,40 @@
   <div class="top-panel">
     <div class="top-panel__box">
       <a class="top-panel__button" @click.prevent="toggleVisible">
-        <icon :name="isVisible ? 'eye-slash' : 'eye'" />
+        <Icon :name="isVisible ? 'eye-slash' : 'eye'" />
       </a>
       <a class="top-panel__button" @click.prevent="fetchPhoto">
-        <icon name="refresh" :spin="isLoading" />
+        <Icon name="refresh" :spin="isLoading" />
       </a>
     </div>
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex';
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { Getter, Action } from "vuex-class";
+import "vue-awesome/icons/refresh";
+import "vue-awesome/icons/eye";
+import "vue-awesome/icons/eye-slash";
 
-import 'vue-awesome/icons/refresh';
-import 'vue-awesome/icons/eye';
-import 'vue-awesome/icons/eye-slash';
+@Component
+export default class TopPanel extends Vue {
+  @Getter("profileVisibility") private isVisible: boolean;
+  @Getter("imageLoading") private isLoading: boolean;
+  @Action("toggleProfileVisibility") private actionToggleProfileVisibility: any;
+  @Action("fetchRandomPhoto") private actionFetchRandomPhoto: any;
 
-export default {
-  name: 'top-panel',
-  data() {
-    return {
-
-    };
-  },
-  computed: mapGetters({
-    isVisible: 'profileVisibility',
-    isLoading: 'imageLoading',
-  }),
-  methods: {
-    toggleVisible() {
-      this.$ga.event('photo', 'hide profile');
-      this.$store.dispatch('toggleProfileVisibility');
-    },
-    fetchPhoto() {
-      this.$ga.event('photo', 'refresh photo');
-      if (!this.isLoading) {
-        this.$store.dispatch('fetchRandomPhoto');
-      }
-    },
-  },
-};
+  toggleVisible() {
+    // this.$ga.event("photo", "hide profile");
+    this.actionToggleProfileVisibility();
+  }
+  fetchPhoto() {
+    if (!this.isLoading) {
+      // this.$ga.event("photo", "refresh photo");
+      this.actionFetchRandomPhoto();
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -54,8 +48,8 @@ export default {
   &__box {
     padding: 0.2em;
     cursor: default;
-    opacity: .3;
-    transition: opacity .2s ease;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
 
     &:hover {
       opacity: 1;
@@ -64,10 +58,10 @@ export default {
 
   &__button {
     cursor: pointer;
-    transition: opacity .2s ease;
+    transition: opacity 0.2s ease;
 
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }

@@ -12,49 +12,45 @@
     <ul class="profile__social">
       <li class="profile__social-item" v-for="social in socials" :key="social.type">
         <a :href="social.url" class="profile__social-link" target="_black" rel="nofollow" :title="social.title">
-          <icon :name="social.type" :label="social.title" />
+          <Icon :name="social.type" :label="social.title" />
         </a>
       </li>
     </ul>
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex';
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { Getter } from "vuex-class";
 
-import 'vue-awesome/icons/envelope-o';
-import 'vue-awesome/icons/github';
-import 'vue-awesome/icons/linkedin-square';
+import "vue-awesome/icons/envelope-o";
+import "vue-awesome/icons/github";
+import "vue-awesome/icons/linkedin-square";
 
-export default {
-  name: 'profile',
-  data() {
-    return {
-      name: 'Dmitry Mostovoy',
-      position: 'JavaScript Developer',
-      socials: [
-        {
-          type: 'envelope-o',
-          url: 'mailto:djmakaron2009@gmail.com',
-          title: 'E-mail',
-        }, {
-          type: 'github',
-          url: 'https://github.com/distolma',
-          title: 'Github',
-        }, {
-          type: 'linkedin-square',
-          url: 'https://www.linkedin.com/in/dmytromostovyi/',
-          title: 'Linkedin',
-        },
-      ],
-    };
-  },
-  computed: {
-    ...mapGetters({
-      isVisible: 'profileVisibility',
-    }),
-  },
-};
+@Component
+export default class Profile extends Vue {
+  private name: string = "Dmitry Mostovoy";
+  private position: string = "JavaScript Developer";
+  private socials = [
+    {
+      type: "envelope-o",
+      url: "mailto:djmakaron2009@gmail.com",
+      title: "E-mail"
+    },
+    {
+      type: "github",
+      url: "https://github.com/distolma",
+      title: "Github"
+    },
+    {
+      type: "linkedin-square",
+      url: "https://www.linkedin.com/in/dmytromostovyi/",
+      title: "Linkedin"
+    }
+  ];
+
+  @Getter("profileVisibility") private isVisible: boolean;
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -65,10 +61,10 @@ export default {
   flex-grow: 1;
   align-self: center;
   justify-content: center;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
   align-items: center;
   flex-direction: column;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   opacity: 1;
   visibility: visible;
 
@@ -87,7 +83,7 @@ export default {
       overflow: hidden;
       border-radius: 50%;
       display: inline-block;
-      border: 5px solid hsla(0, 0%, 100%, .5);
+      border: 5px solid hsla(0, 0%, 100%, 0.5);
     }
   }
 
@@ -102,13 +98,13 @@ export default {
 
     &-link {
       color: #fff;
-      transition: opacity .2s ease;
+      transition: opacity 0.2s ease;
       display: flex;
       align-items: center;
       margin: 0 0.4em;
 
       &:hover {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }

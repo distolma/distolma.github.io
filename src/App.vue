@@ -1,35 +1,33 @@
 <template>
-  <background :isStriped="isVisible">
-    <top-panel></top-panel>
-    <profile></profile>
-    <bottom-panel></bottom-panel>
-  </background>
+  <Background>
+    <TopPanel />
+    <Profile />
+    <BottomPanel />
+  </Background>
 </template>
 
-<script>
-import { mapGetters } from 'vuex';
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { Action } from "vuex-class";
 
-import Background from './components/Background';
-import Profile from './components/Profile';
-import TopPanel from './components/TopPanel';
-import BottomPanel from './components/BottomPanel';
+import Background from "./components/Background.vue";
+import Profile from "./components/Profile.vue";
+import BottomPanel from "./components/BottomPanel.vue";
+import TopPanel from "./components/TopPanel.vue";
 
-export default {
-  name: 'app',
-  created() {
-    this.$store.dispatch('fetchRandomPhoto');
-  },
+@Component({
   components: {
     Background,
     Profile,
-    TopPanel,
     BottomPanel,
-  },
-  computed: mapGetters({
-    isVisible: 'profileVisibility',
-  }),
-};
-</script>
+    TopPanel
+  }
+})
+export default class App extends Vue {
+  @Action("fetchRandomPhoto") private actionFetchRandomPhoto: any;
 
-<style>
-</style>
+  created() {
+    this.actionFetchRandomPhoto();
+  }
+}
+</script>
