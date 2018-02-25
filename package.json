@@ -6,7 +6,9 @@
     "start": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b master"
   },
   "dependencies": {
     "sanitize.css": "^5.0.0",
@@ -31,6 +33,7 @@
     "@vue/eslint-config-typescript": "^3.0.0-beta.1",
     "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^7.0.0-0",
+    "gh-pages": "^1.1.0",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
