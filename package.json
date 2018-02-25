@@ -1,7 +1,10 @@
 {
-  "name": "app",
+  "name": "distolma.github.io",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "repository": "git@github.com:distolma/distolma.github.io.git",
+  "author": "distolma <djmakaron2009@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
