@@ -12,7 +12,7 @@
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
     "deploy":
-      "cross-var gh-pages -d dist -b master -m Update $npm_package_version"
+      "cross-var gh-pages -d dist -b master -m 'Update $npm_package_version'"
   },
   "dependencies": {
     "sanitize.css": "^5.0.0",
