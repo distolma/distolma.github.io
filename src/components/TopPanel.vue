@@ -12,18 +12,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { Getter, Action } from "vuex-class";
-import "vue-awesome/icons/refresh";
-import "vue-awesome/icons/eye";
-import "vue-awesome/icons/eye-slash";
+import { Component, Vue } from 'vue-property-decorator';
+import { Getter, Action } from 'vuex-class';
+import 'vue-awesome/icons/refresh';
+import 'vue-awesome/icons/eye';
+import 'vue-awesome/icons/eye-slash';
 
 @Component
 export default class TopPanel extends Vue {
-  @Getter("profileVisibility") private isVisible: boolean;
-  @Getter("imageLoading") private isLoading: boolean;
-  @Action("toggleProfileVisibility") private actionToggleProfileVisibility: any;
-  @Action("fetchRandomPhoto") private actionFetchRandomPhoto: any;
+  @Getter('profileVisibility') private isVisible: boolean;
+  @Getter('imageLoading') private isLoading: boolean;
+  @Action('toggleProfileVisibility') private actionToggleProfileVisibility: any;
+  @Action('fetchRandomPhoto') private actionFetchRandomPhoto: any;
 
   toggleVisible() {
     // this.$ga.event("photo", "hide profile");
@@ -38,7 +38,6 @@ export default class TopPanel extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .top-panel {
   display: flex;

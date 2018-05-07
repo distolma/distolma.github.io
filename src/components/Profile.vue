@@ -20,36 +20,36 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { Getter } from "vuex-class";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
-import "vue-awesome/icons/envelope-o";
-import "vue-awesome/icons/github";
-import "vue-awesome/icons/linkedin-square";
+import 'vue-awesome/icons/envelope-o';
+import 'vue-awesome/icons/github';
+import 'vue-awesome/icons/linkedin-square';
 
 @Component
 export default class Profile extends Vue {
-  private name: string = "Dmitry Mostovoy";
-  private position: string = "JavaScript Developer";
+  private name: string = 'Dmitry Mostovoy';
+  private position: string = 'JavaScript Developer';
   private socials = [
     {
-      type: "envelope-o",
-      url: "mailto:djmakaron2009@gmail.com",
-      title: "E-mail"
+      type: 'envelope-o',
+      url: 'mailto:djmakaron2009@gmail.com',
+      title: 'E-mail',
     },
     {
-      type: "github",
-      url: "https://github.com/distolma",
-      title: "Github"
+      type: 'github',
+      url: 'https://github.com/distolma',
+      title: 'Github',
     },
     {
-      type: "linkedin-square",
-      url: "https://www.linkedin.com/in/dmytromostovyi/",
-      title: "Linkedin"
-    }
+      type: 'linkedin-square',
+      url: 'https://www.linkedin.com/in/dmytromostovyi/',
+      title: 'Linkedin',
+    },
   ];
 
-  @Getter("profileVisibility") private isVisible: boolean;
+  @Getter('profileVisibility') private isVisible: boolean;
 }
 </script>
 

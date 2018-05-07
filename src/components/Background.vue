@@ -14,17 +14,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { Getter } from "vuex-class";
+import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
 @Component
 export default class Background extends Vue {
-  @Getter("profileVisibility") private isStriped: boolean;
-  @Getter("imageURLs") private images: any;
+  @Getter('profileVisibility') private isStriped: boolean;
+  @Getter('imageURLs') private images: any;
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .background {
   background-repeat: no-repeat;

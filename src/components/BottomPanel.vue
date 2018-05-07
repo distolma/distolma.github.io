@@ -15,14 +15,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { Getter } from "vuex-class";
-import "vue-awesome/icons/angle-left";
+import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
+import 'vue-awesome/icons/angle-left';
 
 @Component
 export default class BottomPanel extends Vue {
-  @Getter("imageAuthor") private author: any;
-  private utm = "?utm_source=Unpaper&utm_medium=referral";
+  @Getter('imageAuthor') private author: any;
+  private utm = '?utm_source=Unpaper&utm_medium=referral';
 }
 </script>
 
