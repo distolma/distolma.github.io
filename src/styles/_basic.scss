@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Jaldi, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.icon {
+  display: block;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+:root {
+  --main-color: #accef7;
+  --secondary-color: #fff;
+}
+
+*::selection {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+}

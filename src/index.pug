@@ -1,0 +1,13 @@
+doctype html
+html(lang="en" itemtype="https://schema.org/Person" itemscope)
+  head
+    include ./components/head.pug
+    link( rel="stylesheet" href="/index.scss" )
+  body
+    include ./components/progressive.pug
+
+    section.section
+      include ./components/header.pug
+      include ./components/profile.pug
+      include ./components/footer.pug
+    script(src="/index.ts")

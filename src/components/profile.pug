@@ -1,0 +1,18 @@
+.profile
+  .profile__container
+    .profile__frame
+      picture.profile__picture
+        source(srcset="./assets/avatar.webp" type="image/webp")
+        img.profile__picture(src="./assets/avatar.jpg" alt="Dmytro Mostovyi photo" itemprop="image")
+    h1 Dmytro Mostovyi
+    h3 JavaScript Developer
+    .profile__contacts
+      a.profile__links(href="mailto:djmakaron2009@gmail.com" itemprop="email" target="_blank")
+        svg.icon
+          use(href="./svg/envelope.svg")
+      a.profile__links(href="https://github.com/distolma" target="_blank")
+        svg.icon
+          use(href="./svg/github.svg")
+      a.profile__links(href="https://www.linkedin.com/in/dmytromostovyi/" target="_blank")
+        svg.icon
+          use(href="./svg/linkedin.svg")
