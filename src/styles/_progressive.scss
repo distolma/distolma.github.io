@@ -1,0 +1,50 @@
+%absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  &__progressive {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    @extend %absolute;
+    opacity: 1;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 0.4s ease-out;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  &__thumb {
+    @extend %absolute;
+    filter: blur(20px);
+    transform: scale(1.1);
+  }
+
+  &__striped {
+    position: relative;
+    height: 100%;
+    background-repeat: repeat;
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4) 1px,
+      transparent 2px,
+      transparent 0,
+      rgba(0, 0, 0, 0.4) 3px
+    );
+    background-size: 4px 4px;
+    transition: background 0.2s ease;
+  }
+}
