@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.pug --open",
-    "build": "npm run clear && parcel build src/index.pug --experimental-scope-hoisting",
-    "build2": "yarn clear && node build.js",
+    "build": "npm run clear && parcel build src/index.pug --experimental-scope-hoisting --public-url ./",
     "clear": "rimraf dist"
   },
   "devDependencies": {
