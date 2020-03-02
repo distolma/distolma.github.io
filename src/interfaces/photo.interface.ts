@@ -61,8 +61,6 @@ interface Currentusercollection {
   published_at: string;
   updated_at: string;
   curated: boolean;
-  cover_photo?: any;
-  user?: any;
 }
 
 interface Location {

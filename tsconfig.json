@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "typeRoots": ["@types/"],
-    "types": ["node"]
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": ["node"],
+    "strict": true,
   },
   "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["node_modules"]

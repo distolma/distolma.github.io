@@ -1,18 +1,14 @@
 language: node_js
+cache: yarn
 node_js:
-  - '10'
+  - '13'
 sudo: false
 
 branches:
   only:
     - dev
 
-cache:
-  directories:
-    - node_modules
-
 install:
-  - npm install -g yarn
   - yarn
 
 script:

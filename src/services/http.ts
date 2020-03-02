@@ -1,4 +1,4 @@
-export function get<T>(input: RequestInfo): Promise<T> {
+export async function get<T>(input: RequestInfo): Promise<T> {
   const headers = new Headers();
   headers.append(
     'Authorization',
