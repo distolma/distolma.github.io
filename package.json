@@ -11,11 +11,11 @@
     "clear": "rimraf dist"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
+    "@babel/core": "^7.8.7",
     "@babel/preset-typescript": "^7.8.3",
-    "@types/node": "^13.7.7",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
+    "@types/node": "^13.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
     "autoprefixer": "^9.7.4",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
@@ -27,10 +27,10 @@
     "prettier": "^1.19.1",
     "pug": "^2.0.4",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.2",
-    "stylelint": "^13.2.0",
+    "sass": "^1.26.3",
+    "stylelint": "^13.2.1",
     "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-scss": "^3.14.2",
+    "stylelint-scss": "^3.15.0",
     "svgo": "^1.3.2",
     "typescript": "^3.8.3"
   },
@@ -63,7 +63,10 @@
     }
   },
   "babel": {
-    "presets": ["@babel/preset-env", "@babel/preset-typescript"]
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ]
   },
   "eslintConfig": {
     "extends": [
