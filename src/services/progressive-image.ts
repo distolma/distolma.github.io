@@ -11,10 +11,7 @@ function imageLoader(src: string): Promise<void> {
     image.src = src;
 
     if (image.decode) {
-      image
-        .decode()
-        .then(resolve)
-        .catch(reject);
+      image.decode().then(resolve).catch(reject);
     } else {
       image.onload = (): void => resolve();
       image.onerror = reject;
@@ -48,7 +45,7 @@ function setMainColor(color: string): void {
   );
 }
 function loadImages(): void {
-  getRandomPhoto().then(photo => {
+  getRandomPhoto().then((photo) => {
     setMainColor(photo.color);
     loadPlaceholder(photo.urls.thumb);
     loadOriginal(photo.urls.custom);

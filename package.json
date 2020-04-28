@@ -12,25 +12,26 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@babel/preset-typescript": "^7.8.3",
-    "@types/node": "^13.9.1",
-    "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
-    "autoprefixer": "^9.7.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@prettier/plugin-pug": "^1.2.0",
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "autoprefixer": "^9.7.6",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svg-sprite": "^1.4.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "pug": "^2.0.4",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.3",
-    "stylelint": "^13.2.1",
+    "sass": "^1.26.5",
+    "stylelint": "^13.3.3",
     "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-scss": "^3.15.0",
+    "stylelint-scss": "^3.17.1",
     "svgo": "^1.3.2",
     "typescript": "^3.8.3"
   },
@@ -46,7 +47,12 @@
       "git add"
     ],
     "src/**/*.scss": [
+      "prettier --write", 
       "stylelint --fix",
+      "git add"
+    ],
+    "src/**/*.pug": [
+      "prettier --write",
       "git add"
     ],
     "src/**/*.svg": [
