@@ -11,7 +11,7 @@
     "clear": "rimraf dist"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
+    "@babel/core": "^7.11.6",
     "@babel/preset-typescript": "^7.9.0",
     "@prettier/plugin-pug": "^1.2.0",
     "@types/node": "^13.13.4",
