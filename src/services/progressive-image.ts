@@ -48,7 +48,7 @@ function loadImages(): void {
   getRandomPhoto().then((photo) => {
     setMainColor(photo.color);
     loadPlaceholder(photo.urls.thumb);
-    loadOriginal(photo.urls.custom);
+    loadOriginal(photo.urls.full);
   });
 }
 // initial load
