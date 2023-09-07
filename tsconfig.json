@@ -1,11 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "types": ["node"],
-    "strict": true,
-  },
-  "include": ["src/**/*.ts", "test/**/*.ts"],
-  "exclude": ["node_modules"]
+  "extends": "astro/tsconfigs/strictest"
 }

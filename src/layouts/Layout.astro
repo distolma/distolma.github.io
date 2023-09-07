@@ -1,0 +1,33 @@
+---
+import "@fontsource/jaldi/latin-400.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    {
+      import.meta.env.PROD && (
+        <script
+          async
+          defer
+          src="https://umami.seabehind.me/script.js"
+          data-website-id="f9aca0c3-a1d7-4b0e-ad20-da112e1750ce"
+        />
+      )
+    }
+    <title>{title}</title>
+  </head>
+  <body class="flex h-screen">
+    <slot />
+  </body>
+</html>
