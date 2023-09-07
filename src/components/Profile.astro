@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+import ProfileLink from "./ProfileLink.astro";
+---
+
+<div>
+  <div class="flex flex-col gap-4 text-center bg-white dark:bg-red">
+    <div>
+      <h1 class="text-2xl">Dmytro Mostovyi</h1>
+
+      <h3 class="text-lg">Software Engineer</h3>
+    </div>
+
+    <div class="flex gap-8 justify-center">
+      <ProfileLink
+        href="mailto:me@dmostovyi.com"
+        target="_blank"
+        data-umami-event="Send a mail"
+      >
+        <Icon name="envelope" class="w-5 h-5" />
+      </ProfileLink>
+      <ProfileLink
+        href="https://github.com/distolma"
+        target="_blank"
+        rel="noopener"
+        data-umami-event="Navigate to Github"
+      >
+        <Icon name="github" class="w-5 h-5" />
+      </ProfileLink>
+      <ProfileLink
+        href="https://www.linkedin.com/in/dmytromostovyi/"
+        target="_blank"
+        rel="noopener"
+        data-umami-event="Navigate to LinkedIn"
+      >
+        <Icon name="linkedin" class="w-5 h-5" />
+      </ProfileLink>
+    </div>
+  </div>
+</div>

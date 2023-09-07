@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const { ...attrs } = Astro.props;
+---
+
+<a
+  {...attrs}
+  class="group relative inline-block h-9 w-9 cursor-pointer p-2 outline-none"
+>
+  <div
+    class="absolute left-0 top-0 h-full w-full scale-0 rounded-full bg-zinc-200 transition-transform duration-200 ease-in-out group-hover:scale-100 group-focus-visible:scale-100"
+  >
+  </div>
+  <div class="relative"><slot /></div>
+</a>
