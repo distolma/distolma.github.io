@@ -10,8 +10,8 @@ module.exports = {
         sans: ["Jaldi", "Helvetica", "Arial", ...defaultTheme.fontFamily.sans],
       },
       height: {
-        screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
-      }
+        screen: ["100vh /* fallback for Opera, IE and etc. */", "100dvh"],
+      },
     },
   },
   plugins: [],
