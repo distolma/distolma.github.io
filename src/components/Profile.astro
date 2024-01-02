@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ProfileLink from "./ProfileLink.astro";
 ---
 
@@ -18,7 +18,7 @@ import ProfileLink from "./ProfileLink.astro";
         aria-label="Send a mail to Dmytro Mostovyi"
         data-umami-event="Send a mail"
       >
-        <Icon name="envelope" class="w-5 h-5" />
+        <Icon name="envelope" class="w-5 h-5" aria-hidden="true" />
       </ProfileLink>
       <ProfileLink
         href="https://github.com/distolma"
@@ -27,7 +27,7 @@ import ProfileLink from "./ProfileLink.astro";
         aria-label="Navigate to Dmytro Mostovyi's Github profile"
         data-umami-event="Navigate to Github"
       >
-        <Icon name="github" class="w-5 h-5" />
+        <Icon name="github" class="w-5 h-5" aria-hidden="true" />
       </ProfileLink>
       <ProfileLink
         href="https://www.linkedin.com/in/dmytromostovyi/"
@@ -36,7 +36,7 @@ import ProfileLink from "./ProfileLink.astro";
         aria-label="Navigate to Dmytro Mostovyi's LinkedIn profile"
         data-umami-event="Navigate to LinkedIn"
       >
-        <Icon name="linkedin" class="w-5 h-5" />
+        <Icon name="linkedin" class="w-5 h-5" aria-hidden="true" />
       </ProfileLink>
     </div>
   </div>
