@@ -1,26 +1,27 @@
 ---
 import { Icon } from "astro-icon/components";
-import ProfileLink from "./ProfileLink.astro";
 ---
 
 <div>
   <div class="flex flex-col gap-4 text-center text-gray-700 dark:text-gray-100">
-    <hgroup>
+    <hgroup class="opacity-80">
       <h1 class="text-2xl">Dmytro Mostovyi</h1>
 
       <h2 class="text-lg">Software Engineer</h2>
     </hgroup>
 
     <div class="flex gap-8 justify-center">
-      <ProfileLink
+      <a
+        class="inline-block h-9 w-9 p-2"
         href="mailto:me@dmostovyi.com"
         target="_blank"
         aria-label="Send a mail to Dmytro Mostovyi"
         data-umami-event="Send a mail"
       >
         <Icon name="envelope" class="w-5 h-5" aria-hidden="true" />
-      </ProfileLink>
-      <ProfileLink
+      </a>
+      <a
+        class="inline-block h-9 w-9 p-2"
         href="https://github.com/distolma"
         target="_blank"
         rel="noopener"
@@ -28,8 +29,9 @@ import ProfileLink from "./ProfileLink.astro";
         data-umami-event="Navigate to Github"
       >
         <Icon name="github" class="w-5 h-5" aria-hidden="true" />
-      </ProfileLink>
-      <ProfileLink
+      </a>
+      <a
+        class="inline-block h-9 w-9 p-2"
         href="https://www.linkedin.com/in/dmytromostovyi/"
         target="_blank"
         rel="noopener"
@@ -37,7 +39,7 @@ import ProfileLink from "./ProfileLink.astro";
         data-umami-event="Navigate to LinkedIn"
       >
         <Icon name="linkedin" class="w-5 h-5" aria-hidden="true" />
-      </ProfileLink>
+      </a>
     </div>
   </div>
 </div>
