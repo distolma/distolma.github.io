@@ -35,6 +35,12 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Lint (Prettier)
+        run: pnpm dlx prettier --check ./src
+
+      - name: Lint (Biome)
+        run: pnpm dlx @biomejs/biome check ./src
+
       - name: Build
         run: pnpm run build
 
