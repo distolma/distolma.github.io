@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^3.4.1
     version: 3.4.1
   vite-plugin-mkcert:
-    specifier: ^1.17.2
-    version: 1.17.2(vite@5.0.12)
+    specifier: ^1.17.3
+    version: 1.17.3(vite@5.0.12)
 
 packages:
 
@@ -3887,9 +3887,9 @@ packages:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  /vite-plugin-mkcert@1.17.2(vite@5.0.12):
-    resolution: {integrity: sha512-2lc+zKwPgnkx0xDPMgoeNPtXmjGrWqg/V99D9Ybib7Mrg0pHI0VaAwAw95xa0x4Tlg33/FNzqm0RnCTr4QCIgw==}
-    engines: {node: '>=20.0.0'}
+  /vite-plugin-mkcert@1.17.3(vite@5.0.12):
+    resolution: {integrity: sha512-C8iLz4Su4kEyJb1GdlGIMfKkYMqfH5qvhqVP1x/hrc+1mo9GOzqU88mevvP5epgoqawkhVpcQVQ+HTFXsRuC0g==}
+    engines: {node: '>=v16.7.0'}
     peerDependencies:
       vite: '>=3'
     dependencies:
