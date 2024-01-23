@@ -21,6 +21,6 @@
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1",
-    "vite-plugin-mkcert": "^1.17.2"
+    "vite-plugin-mkcert": "^1.17.3"
   }
 }
