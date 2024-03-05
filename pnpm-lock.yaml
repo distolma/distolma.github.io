@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@fontsource/jaldi':
-    specifier: ^5.0.8
-    version: 5.0.8
+    specifier: ^5.0.12
+    version: 5.0.12
   astro:
     specifier: ^4.4.5
     version: 4.4.5
@@ -602,8 +602,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@fontsource/jaldi@5.0.8:
-    resolution: {integrity: sha512-SVOKAId55vGfjDvRBu6OAyN4tLVGk/G+AOGM+aFgGy16DvC+9/nH1qgJNGMyHX0blnH/01DWV3vyy/l60EceMg==}
+  /@fontsource/jaldi@5.0.12:
+    resolution: {integrity: sha512-O+2IezaC/KP2OjbZdJRDsbjY8CBsdS3OiFv/aH989eUVOXqE3bPxQ8YU1gS2o86BY+uY7YBYQP+A3U7Hkl5gPA==}
     dev: false
 
   /@iconify/tools@3.0.7:
