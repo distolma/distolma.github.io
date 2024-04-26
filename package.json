@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/jaldi": "^5.0.12",
-    "astro": "^4.6.2",
+    "@fontsource/jaldi": "^5.0.13",
+    "astro": "^4.7.0",
     "astro-icon": "^1.1.0"
   },
   "devDependencies": {
