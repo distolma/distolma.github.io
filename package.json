@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@fontsource/jaldi": "^5.0.13",
-    "astro": "^4.7.0",
+    "astro": "^4.8.3",
     "astro-icon": "^1.1.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
-    "@biomejs/biome": "1.7.0",
+    "@biomejs/biome": "1.7.3",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
