@@ -12,15 +12,15 @@ importers:
         specifier: ^5.0.13
         version: 5.0.13
       astro:
-        specifier: ^4.11.4
-        version: 4.11.4(@types/node@20.14.9)
+        specifier: ^4.11.5
+        version: 4.11.5(@types/node@20.14.9)
       astro-icon:
         specifier: ^1.1.0
         version: 1.1.0
     devDependencies:
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.11.4(@types/node@20.14.9))(tailwindcss@3.4.4)
+        version: 5.1.0(astro@4.11.5(@types/node@20.14.9))(tailwindcss@3.4.4)
       '@biomejs/biome':
         specifier: 1.8.3
         version: 1.8.3
@@ -789,8 +789,8 @@ packages:
   astro-icon@1.1.0:
     resolution: {integrity: sha512-Nksc09p7UuHeMcPNS9w1pKqRw3+wEmmh0A3FJW+FNXvqaeWI4RLvD1MCWErpY3Z5Cvad317rvLdik/Hg8GEk8Q==}
 
-  astro@4.11.4:
-    resolution: {integrity: sha512-jSCnPD+r4MO5Pxl04XfCydzZiL/p70q1ddYind02JDGQDLlps4d2s/AfT/7be12gf1PpR13ACcvO6aJFUIVQXA==}
+  astro@4.11.5:
+    resolution: {integrity: sha512-TCRhuaLwrxwMhS8S1GG+ZTdrAXigX9C8E/YUTs/r2t+owHxDgwl86IV9xH1IHrCPoqhK6civyAQNOT+GKmkb0A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2396,9 +2396,9 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/tailwind@5.1.0(astro@4.11.4(@types/node@20.14.9))(tailwindcss@3.4.4)':
+  '@astrojs/tailwind@5.1.0(astro@4.11.5(@types/node@20.14.9))(tailwindcss@3.4.4)':
     dependencies:
-      astro: 4.11.4(@types/node@20.14.9)
+      astro: 4.11.5(@types/node@20.14.9)
       autoprefixer: 10.4.19(postcss@8.4.39)
       postcss: 8.4.39
       postcss-load-config: 4.0.2(postcss@8.4.39)
@@ -3058,7 +3058,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@4.11.4(@types/node@20.14.9):
+  astro@4.11.5(@types/node@20.14.9):
     dependencies:
       '@astrojs/compiler': 2.8.1
       '@astrojs/internal-helpers': 0.4.1
