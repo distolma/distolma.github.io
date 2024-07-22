@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fontsource/jaldi": "^5.0.13",
-    "astro": "^4.11.4",
+    "astro": "^4.12.2",
     "astro-icon": "^1.1.0"
   },
   "devDependencies": {
