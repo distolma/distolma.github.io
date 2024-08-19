@@ -20,7 +20,7 @@ importers:
     devDependencies:
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.13.2(@types/node@22.1.0))(tailwindcss@3.4.9)
+        version: 5.1.0(astro@4.13.2(@types/node@22.1.0))(tailwindcss@3.4.10)
       '@biomejs/biome':
         specifier: 1.8.3
         version: 1.8.3
@@ -34,8 +34,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(prettier-plugin-astro@0.14.1)(prettier@3.3.3)
       tailwindcss:
-        specifier: ^3.4.9
-        version: 3.4.9
+        specifier: ^3.4.10
+        version: 3.4.10
       vite-plugin-mkcert:
         specifier: ^1.17.5
         version: 1.17.5(vite@5.4.0(@types/node@22.1.0))
@@ -2109,8 +2109,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tailwindcss@3.4.9:
-    resolution: {integrity: sha512-1SEOvRr6sSdV5IDf9iC+NU4dhwdqzF4zKKq3sAbasUWHEM6lsMhX+eNN5gkPx1BvLFEnZQEUFbXnGj8Qlp83Pg==}
+  tailwindcss@3.4.10:
+    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2376,13 +2376,13 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/tailwind@5.1.0(astro@4.13.2(@types/node@22.1.0))(tailwindcss@3.4.9)':
+  '@astrojs/tailwind@5.1.0(astro@4.13.2(@types/node@22.1.0))(tailwindcss@3.4.10)':
     dependencies:
       astro: 4.13.2(@types/node@22.1.0)
       autoprefixer: 10.4.20(postcss@8.4.41)
       postcss: 8.4.41
       postcss-load-config: 4.0.2(postcss@8.4.41)
-      tailwindcss: 3.4.9
+      tailwindcss: 3.4.10
     transitivePeerDependencies:
       - ts-node
 
@@ -4659,7 +4659,7 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.0.1
 
-  tailwindcss@3.4.9:
+  tailwindcss@3.4.10:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
