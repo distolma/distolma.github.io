@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fontsource/jaldi':
-        specifier: ^5.0.13
-        version: 5.0.13
+        specifier: ^5.0.14
+        version: 5.0.14
       astro:
         specifier: ^4.13.2
         version: 4.13.2(@types/node@22.1.0)
@@ -364,8 +364,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/jaldi@5.0.13':
-    resolution: {integrity: sha512-YmYiSM4ufWfi4LVTDsnLIjLBN7l9ztEsR1rbRnsJdGvP40lsIwtbJ/2S4uZ69z91+rTtWl2MoqjonTw0heBOqQ==}
+  '@fontsource/jaldi@5.0.14':
+    resolution: {integrity: sha512-JMcYkmBLX/ieTqumQwzYZeBF/+K6N8rebb/hFX1MyC/nc/4I75b0s30CXdi1vfEmw2WJaZueKUV7am6wsOxU5g==}
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -2641,7 +2641,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@fontsource/jaldi@5.0.13': {}
+  '@fontsource/jaldi@5.0.14': {}
 
   '@iconify/tools@3.0.7':
     dependencies:
