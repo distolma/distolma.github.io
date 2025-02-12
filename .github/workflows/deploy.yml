@@ -25,13 +25,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Use Latest Corepack
+        run: npm install -g corepack@latest
+
       - name: Enable Corepack
         run: corepack enable
-      
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.node-version'
+          node-version-file: ".node-version"
           cache: pnpm
 
       - name: Install Dependencies
