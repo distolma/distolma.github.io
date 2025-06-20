@@ -44,7 +44,7 @@ jobs:
         run: pnpm dlx prettier --check ./src
 
       - name: Lint (Biome)
-        run: pnpm dlx @biomejs/biome ci ./src
+        run: npx @biomejs/biome ci ./src
 
       - name: Build
         run: pnpm run build
