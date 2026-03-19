@@ -10,18 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/jaldi": "^5.2.6",
-    "astro": "^5.8.0",
+    "@fontsource/jaldi": "^5.2.7",
+    "astro": "^6.0.6",
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@tailwindcss/vite": "^4.1.7",
-    "prettier": "3.5.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "prettier": "3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.1.7",
-    "vite-plugin-mkcert": "^1.17.8"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.2.2",
+    "vite-plugin-mkcert": "^1.17.10"
   },
   "packageManager": "pnpm@10.3.0",
   "pnpm": {
